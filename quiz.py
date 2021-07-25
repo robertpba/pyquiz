@@ -4,10 +4,10 @@ from qwikidata.sparql import return_sparql_query_results
 sparql_query = """
 SELECT DISTINCT ?nameLabel ?urlLabel
 WHERE {
-  ?country wdt:P31 wd:Q6256.
-  ?country wdt:P163 ?flag.
-  ?country wdt:P17 ?name.
-  ?flag wdt:P18 ?url.
+  ?country wdt:P31 wd:Q6256.    # get all countries
+  ?country wdt:P163 ?flag.      # get flag of country
+  ?country wdt:P17 ?name.       # get name of country
+  ?flag wdt:P18 ?url.           # get url of flag svg image
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 """
